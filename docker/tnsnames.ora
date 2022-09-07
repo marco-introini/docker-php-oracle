@@ -1,0 +1,11 @@
+MYDEMOSID =
+  (DESCRIPTION =
+    (LOAD_BALANCE = yes)
+    (FAILOVER = ON)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = myhost.mydomain)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = myservicename)
+      (FAILOVER_MODE = (TYPE = SELECT)(METHOD = BASIC)(RETRIES = 180)(DELAY = 5))
+    )
+  )
