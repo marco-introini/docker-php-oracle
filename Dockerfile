@@ -19,17 +19,9 @@ RUN apt-get update && apt-get install -y \
         git \
     && docker-php-ext-configure gd \
     && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install mysqli \
     && docker-php-ext-install zip \
     && docker-php-ext-install soap \
     && docker-php-source delete
-
-RUN \
-    docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
-    && docker-php-ext-configure mysqli \
-    && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install mcrypt
 
 # xdebug, if you want to debug
 RUN pecl install xdebug \

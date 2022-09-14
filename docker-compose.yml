@@ -9,6 +9,7 @@ services:
       - ORACLE_SID=MYDEMOSID
       - ORACLE_USER=MYDEMOUSER
       - ORACLE_PASSWORD=MYDEMOPASSWORD
+      - ORACLE_CONNECTION=connection_string
     volumes:
       - ./src:/var/www/src
     working_dir: /var/www
